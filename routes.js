@@ -51,7 +51,7 @@ router.post("/add/", async function (req, res, next) {
 router.get("/:id/", async function (req, res, next) {
   try {
     const customer = await Customer.get(req.params.id);
-    // console.log(customer)
+    // console.log(customer.fullname())
     const reservations = await customer.getReservations();
     // console.log(reservations)
     return res.render("customer_detail.html", { customer, reservations });
